@@ -1,0 +1,16 @@
+version: '3.8'
+
+volumes:
+  n8n_data:
+    external: false
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_ENCRYPTION_KEY=this_is_secret_key
+    volumes:
+      - n8n_data:/home/node/.n8n
