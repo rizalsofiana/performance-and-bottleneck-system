@@ -7,3 +7,40 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* ==========================================================================
+   Auth Layout — tema warna brand
+   (dipakai oleh resources/views/layouts/auth.blade.php dan halaman turunannya)
+   Catatan: halaman auth murni HTML/Blade/CSS, TIDAK bergantung pada JS apa pun.
+   ========================================================================== */
+@theme {
+    --color-brand: #1d4ed8;
+    --color-brand-dark: #1538a8;
+}
+
+.auth-shell {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fokus keyboard yang jelas */
+:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+input:focus-visible {
+    outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
