@@ -2,23 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[Fillable(['task_id', 'escalation_level', 'channel_used', 'message_payload', 'created_at'])]
+#[Table('bottleneck_logs')]
 class BottleneckLog extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
-
-    protected $fillable = [
-        'task_id',
-        'escalation_level',
-        'channel_used',
-        'message_payload',
-        'created_at',
-    ];
 
     protected function casts(): array
     {

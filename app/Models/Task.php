@@ -2,26 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Fillable(['task_code', 'title', 'project_name', 'description', 'employee_id', 'assigned_date', 'due_date', 'completion_date', 'status'])]
+#[Table('tasks')]
 class Task extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'task_code',
-        'title',
-        'project_name',
-        'description',
-        'employee_id',
-        'assigned_date',
-        'due_date',
-        'completion_date',
-        'status',
-    ];
 
     protected function casts(): array
     {

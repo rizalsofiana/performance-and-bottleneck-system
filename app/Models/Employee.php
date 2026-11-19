@@ -2,24 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
+#[Fillable(['nik', 'name', 'department', 'position', 'email', 'telegram_chat_id', 'status'])]
+#[Table('employees')]
 class Employee extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'nik',
-        'name',
-        'department',
-        'position',
-        'email',
-        'telegram_chat_id',
-        'status',
-    ];
 
     /**
      * Tugas-tugas yang diberikan kepada karyawan ini.
